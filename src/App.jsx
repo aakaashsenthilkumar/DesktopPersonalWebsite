@@ -1,11 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Window from './components/Window';
 import Terminal from './components/Terminal';
-import wallpaper from "./assets/ubuntubg.jpg";
 import AboutWindow from "./content/AboutWindow";
 import ExperienceWindow from "./content/ExperienceWindow";
 import ProjectsWindow from "./content/ProjectsWindow";
 import FilesWindow from "./content/FilesWindow"; // <-- import FilesWindow
+
+import wallpaper from "./assets/ubuntubg.jpg";
+import signalIcon from "./assets/signal.png";
+import wifiIcon from "./assets/wifi.png";
+import soundIcon from "./assets/sound.png";
+import chargeIcon from "./assets/charge.png";
+import userIcon from "./assets/user.png";
+import settingsIcon from "./assets/settings.png";
+import webPageIcon from "./assets/web-page.png";
+import terminalIcon from "./assets/terminal2.png";
+import folderIcon from "./assets/open-folder.png";
+
 
 export default function App(){
   const [wins,setWins]=useState([]);
@@ -57,19 +68,19 @@ export default function App(){
         </div>
 
         <div className="topbar-right">
-          <img src="/src/assets/signal.png" className="topbar-icon" />
-          <img src="/src/assets/wifi.png" className="topbar-icon" />
-          <img src="/src/assets/sound.png" className="topbar-icon" />
-          <img src="/src/assets/charge.png" className="topbar-icon" />
+          <img src={signalIcon} className="topbar-icon" />
+          <img src={wifiIcon} className="topbar-icon" />
+          <img src={soundIcon} className="topbar-icon" />
+          <img src={chargeIcon} className="topbar-icon" />
         </div>
       </div>
 
       <div className="leftbar">
-        <img src="/src/assets/user.png" onClick={() => open('about','About', <AboutWindow />)} />
-        <img src="/src/assets/settings.png" onClick={() => open('exp','Experience', <ExperienceWindow />)} />
-        <img src="/src/assets/web-page.png" onClick={() => open('proj','Projects', <ProjectsWindow />)} />
-        <img src="/src/assets/terminal2.png" onClick={()=>open('term','Terminal',<Terminal/>)}/>
-        <img src="/src/assets/open-folder.png" onClick={()=>open('files','Files',<FilesWindow />)}/> {/* <-- use FilesWindow */}
+        <img src={userIcon} onClick={() => open('about','About', <AboutWindow />)} />
+        <img src={settingsIcon} onClick={() => open('exp','Experience', <ExperienceWindow />)} />
+        <img src={webPageIcon} onClick={() => open('proj','Projects', <ProjectsWindow />)} />
+        <img src={terminalIcon} onClick={()=>open('term','Terminal',<Terminal/>)}/>
+        <img src={folderIcon} onClick={()=>open('files','Files',<FilesWindow />)}/>
       </div>
 
       {wins.map(w => (

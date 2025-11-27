@@ -10,10 +10,13 @@ body,html,#root{
   color: #eee;
   background:#000;overflow:hidden;
 }
+
 .wallpaper {
   position: fixed;
   inset: 0;
-  background: url('/src/assets/ubuntubg.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 0;
 }
 
